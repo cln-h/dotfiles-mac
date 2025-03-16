@@ -9,6 +9,8 @@ nmap("<C-d>", "<C-d>zz")
 nmap("<C-u>", "<C-u>zz")
 nmap("J", "5j")
 nmap("K", "5k")
+nmap("n", "nzz")
+nmap("N", "Nzz")
 
 return {
   -- Telescope
@@ -146,8 +148,8 @@ return {
     end,
     desc = "Delete buffer",
   },
-  { "<C-Tab>", "<Cmd>bnext<CR>", desc = "Next buffer" },
-  { "<C-S-Tab>", "<Cmd>bprevious<CR>", desc = "Previous buffer" },
+  { "<Leader>bn", "<Cmd>bnext<CR>", desc = "Next buffer" },
+  { "<Leader>bp", "<Cmd>bprevious<CR>", desc = "Previous buffer" },
 
   -- Git
   { "<Leader>gs", "<Cmd>Git<CR>", desc = "Git status" },

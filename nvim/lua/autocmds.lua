@@ -1,5 +1,4 @@
-local augroup = vim.api.nvim_create_augroup -- create autocommand group
-local autocmd = vim.api.nvim_create_autocmd -- create autocommand
+local autocmd = vim.api.nvim_create_autocmd
 
 -- Relative line numbers in normal mode, otherwise set number
 autocmd("BufEnter", {
@@ -42,3 +41,4 @@ autocmd("Filetype", {
       vim.opt_local.spell = true
   end
 })
+
