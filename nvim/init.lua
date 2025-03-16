@@ -126,6 +126,20 @@ require("lazy").setup({
         })
     end,
   },
+  {
+    "MunifTanjim/nui.nvim",
+    lazy = true,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("noice").setup({})
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    }
+  },
 
   -- Search
   {

@@ -8,6 +8,8 @@
   "mini.bufremove": { "branch": "main", "commit": "bba1d8b413d37081756f59200b8cf756181e5b9a" },
   "mini.diff": { "branch": "main", "commit": "bc3a7be30fd45ed4961ea90de1d9d04637cdeae6" },
   "mini.surround": { "branch": "main", "commit": "f90069c7441a5fb04c3de42eacf93e16b64dd3eb" },
+  "noice.nvim": { "branch": "main", "commit": "0427460c2d7f673ad60eb02b35f5e9926cf67c59" },
+  "nui.nvim": { "branch": "main", "commit": "8d3bce9764e627b62b07424e0df77f680d47ffdb" },
   "nvim-autopairs": { "branch": "master", "commit": "68f0e5c3dab23261a945272032ee6700af86227a" },
   "nvim-lspconfig": { "branch": "master", "commit": "8a1529e46eef5efc86c34c8d9bdd313abc2ecba0" },
   "nvim-treesitter": { "branch": "master", "commit": "548ed98f8a0af738d095ef1be5961f41061ed743" },
