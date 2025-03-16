@@ -8,3 +8,6 @@ font-family-bold-italic = "DeJa Vu Sans Mono Bold Italic"
 # theme
 theme = rose-pine
 
+# window
+window-padding-x = 10
+window-padding-y = 10
