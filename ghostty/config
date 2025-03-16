@@ -1,0 +1,10 @@
+# font
+font-size = 14
+font-family = "DejaVu Sans Mono"
+font-family-bold = "DeJa Vu Sans Mono Bold"
+font-family-italic = "DeJa Vu Sans Mono Italic"
+font-family-bold-italic = "DeJa Vu Sans Mono Bold Italic"
+
+# theme
+theme = rose-pine
+
