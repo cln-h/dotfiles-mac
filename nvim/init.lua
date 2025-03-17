@@ -338,7 +338,7 @@ require("lazy").setup({
           enabled = true,
           auto_trigger = "true",
           keymap = {
-            accept = "<Tab>",
+            accept = "<C-A>",
             close = "<Esc>",
             next = "<C-J>",
             prev = "<C-K>",
@@ -351,6 +351,19 @@ require("lazy").setup({
         }
       })
     end,
+  },
+  -- { -- TODO: I'll have to write something custom, but I want to do the same for blink.
+  --   "zbirenbaum/copilot-cmp",
+  --   config = function ()
+  --     require("copilot_cmp").setup()
+  --   end
+  -- },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-lua/plenary.nvim" }, -- for curl, log and async functions
+    },
   },
 
   -- Misc
