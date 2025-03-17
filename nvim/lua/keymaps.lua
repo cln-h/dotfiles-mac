@@ -153,7 +153,6 @@ return {
 
   -- Git
   { "<Leader>gs", "<Cmd>Git<CR>", desc = "Git status" },
-  { "<Leader>gb", "<Cmd>Git blame<CR>", desc = "Git blame" },
   { "<Leader>gl", "<Cmd>Git log<CR>", desc = "Git log" },
   { "<Leader>ghb", "<Cmd>silent !gh browse %<CR>", desc = "GitHub browse" },
   { "<Leader>ghr", "<Cmd>silent !gh repo view --web<CR>", desc = "GitHub repo" },
@@ -164,6 +163,12 @@ return {
       end,
       desc = "Git diff overlay",
   },
+  { "<Leader>gbb", "<Cmd>Git blame<CR>", desc = "Git blame" },
+  { "<Leader>gbt", "<Cmd>GitBlameToggle<CR>", desc = "Git blame toggle" },
+  { "<Leader>gboc", "<Cmd>GitBlameOpenCommitURL<CR>", desc = "Open commit URL" },
+  { "<Leader>gbof", "<Cmd>GitBlameOpenFileURL<CR>", desc = "Open file URL" },
+  { "<Leader>gbcs", "<Cmd>GitBlameCopySHA<CR>", desc = "Copy commit SHA" },
+  { "<Leader>gbcu", "<Cmd>GitBlameCopyFileURL", desc = "Copy commit permalink" },
 
   -- Yank
   { "<C-c>", '"+y', mode = { "n", "v" } , desc = "Yank to clipboard"},
@@ -203,3 +208,4 @@ return {
     desc = "Open URL",
   }
 }
+
