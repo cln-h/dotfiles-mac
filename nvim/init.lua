@@ -146,13 +146,13 @@ require("lazy").setup({
     "nvim-telescope/telescope.nvim",
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  -- {
-  --   "https://github.com/MagicDuck/grug-far.nvim",
-  --   lazy = true,
-  --   config = function()
-  --       require("grug-far").setup({})
-  --   end,
-  -- },
+  {
+    "https://github.com/MagicDuck/grug-far.nvim",
+    lazy = true,
+    config = function()
+        require("grug-far").setup({})
+    end,
+  },
 
   -- File Manager
   {

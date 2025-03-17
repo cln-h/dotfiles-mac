@@ -170,6 +170,26 @@ return {
   { "<Leader>gbcs", "<Cmd>GitBlameCopySHA<CR>", desc = "Copy commit SHA" },
   { "<Leader>gbcu", "<Cmd>GitBlameCopyFileURL", desc = "Copy commit permalink" },
 
+  -- Search and replace
+  {
+    "<Leader>sr",
+    function()
+      require("grug-far").grug_far({
+        prefills = {
+          flags = vim.fn.expand("%"),
+        },
+      })
+    end,
+    desc = "Search and replace in current file",
+  },
+  {
+    "<Leader>sR",
+    function()
+      require("grug-far").grug_far({})
+    end,
+    desc = "Search and replace in project",
+  },
+
   -- Yank
   { "<C-c>", '"+y', mode = { "n", "v" } , desc = "Yank to clipboard"},
   { "<Leader>yF", "<Cmd>let @+ = expand('%:p:~')<CR>", desc = "Yank absolute file path to clipboard" },
