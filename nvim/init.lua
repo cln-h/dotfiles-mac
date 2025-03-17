@@ -366,6 +366,35 @@ require("lazy").setup({
     },
   },
 
+  -- Notes
+  return {
+    "epwalsh/obsidian.nvim",
+    version = "*",  -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- Example configuration
+    -- opts = {
+    --   workspaces = {
+    --     {
+    --       name = "personal",
+    --       path = "~/vaults/personal",
+    --     },
+    --     {
+    --       name = "work",
+    --       path = "~/vaults/work",
+    --     },
+    --   },
+    -- },
+    --[[
+      -- may configure this like this so it can be gitignored and used across systems
+      opts = require("obsidian-opts")
+    ]]
+  },
+
+
   -- Misc
   {
     "https://github.com/farmergreg/vim-lastplace",
