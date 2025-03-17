@@ -272,6 +272,10 @@ require("lazy").setup({
         require("nvim-autopairs").setup()
     end,
   },
+  {
+
+  },
+
 
   -- Git
   {
@@ -284,6 +288,10 @@ require("lazy").setup({
     config = function()
         require("mini.diff").setup({})
     end,
+  },
+  {
+    "f-person/git-blame.nvim",
+    event = "VeryLazy",
   },
 
   -- Motions
