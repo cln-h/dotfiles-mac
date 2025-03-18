@@ -354,7 +354,7 @@ require("lazy").setup({
           enabled = true,
           auto_trigger = "true",
           keymap = {
-            accept = "<C-A>",
+            accept = "<C-F>",
             close = "<Esc>",
             next = "<C-J>",
             prev = "<C-K>",
@@ -452,3 +452,4 @@ require("lazy").setup({
 vim.cmd("colorscheme rose-pine")
 
 require('autocmds')
+
