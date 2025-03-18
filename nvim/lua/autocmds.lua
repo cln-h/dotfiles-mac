@@ -37,8 +37,17 @@ autocmd("BufEnter", {
 autocmd("Filetype", {
   pattern = {"gitcommit", "markdown", "text"},
   callback = function()
-      vim.opt_local.wrap = true
-      vim.opt_local.spell = true
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
+  end
+})
+
+-- Disable line numbers within copilot chat buffer
+autocmd("BufEnter", {
+  pattern = {"copilot-chat"},
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
   end
 })
 
