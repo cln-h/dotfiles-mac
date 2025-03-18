@@ -191,7 +191,10 @@ return {
   },
 
   -- Copilot
-  { "<Leader>cc", "<Cmd>CopilotChat<CR>", desc = "Copilot chat" },
+  { "<Leader>ccc", "<Cmd>CopilotChat<CR>", desc = "Copilot chat" },
+  { "<Leader>cca", "<Cmd>CopilotChatAgents<CR>", desc = "Copilot chat agents" },
+  { "<Leader>ccm", "<Cmd>CopilotChatModels<CR>", desc = "Copilot chat models"},
+  { "<Leader>ccp", "<Cmd>CopilotChatPrompts<CR>", desc = "Copilot chat prompts"},
 
   -- Yank
   { "<C-c>", '"+y', mode = { "n", "v" } , desc = "Yank to clipboard"},
