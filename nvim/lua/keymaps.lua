@@ -190,6 +190,9 @@ return {
     desc = "Search and replace in project",
   },
 
+  -- Copilot
+  { "<Leader>cc", "<Cmd>CopilotChat<CR>", desc = "Copilot chat" },
+
   -- Yank
   { "<C-c>", '"+y', mode = { "n", "v" } , desc = "Yank to clipboard"},
   { "<Leader>yF", "<Cmd>let @+ = expand('%:p:~')<CR>", desc = "Yank absolute file path to clipboard" },
