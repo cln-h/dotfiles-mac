@@ -130,7 +130,7 @@ require("lazy").setup({
     "MunifTanjim/nui.nvim",
     lazy = true,
   },
-  {
+  { -- TODO: Play with notify. Will be a dep here.
     "folke/noice.nvim",
     event = "VeryLazy",
     config = function()
