@@ -391,10 +391,9 @@ require("lazy").setup({
     --     },
     --   },
     -- },
-    --[[
-      -- may configure this like this so it can be gitignored and used across systems
-      opts = require("obsidian-opts")
-    ]]
+    opts = {
+      workspaces = require("obsidian-vaults") or {},
+    }
   },
 
 
