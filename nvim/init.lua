@@ -294,7 +294,7 @@ require("lazy").setup({
 
 
   -- Git
-  {
+  { -- TODO: Consider switching to neogit or other alt
     "https://github.com/tpope/vim-fugitive",
     cmd = "Git",
   },
