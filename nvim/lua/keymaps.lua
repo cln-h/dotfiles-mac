@@ -154,6 +154,9 @@ return {
   -- Git
   { "<Leader>gs", "<Cmd>Git<CR>", desc = "Git status" },
   { "<Leader>gl", "<Cmd>Git log<CR>", desc = "Git log" },
+  { "<Leader>gc", ":Git commit -m \"", desc = "Git commit" },
+  { "<Leader>gaf", "<Cmd>Git add %<CR>", desc = "Git stage current file"},
+  { "<Leader>gaa", "<Cmd>Git add .<CR>", desc = "Stage all in working directory"},
   { "<Leader>ghb", "<Cmd>silent !gh browse %<CR>", desc = "GitHub browse" },
   { "<Leader>ghr", "<Cmd>silent !gh repo view --web<CR>", desc = "GitHub repo" },
   {
