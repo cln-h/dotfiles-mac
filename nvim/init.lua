@@ -368,7 +368,7 @@ require("lazy").setup({
       })
     end,
   },
-  -- { -- TODO: I'll have to write something custom, but I want to do the same for blink.
+  -- { -- TODO: Use the blink.compat compatibility layer to use this plugin
   --   "zbirenbaum/copilot-cmp",
   --   config = function ()
   --     require("copilot_cmp").setup()
