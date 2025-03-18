@@ -294,7 +294,7 @@ require("lazy").setup({
 
 
   -- Git
-  { -- TODO: Consider switching to neogit or other alt
+  { -- TODO: Consider switching to neogit + diffview
     "https://github.com/tpope/vim-fugitive",
     cmd = "Git",
   },

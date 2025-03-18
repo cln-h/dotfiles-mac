@@ -158,6 +158,14 @@ return {
   { "<Leader>gaa", "<Cmd>Git add .<CR>", desc = "Stage all in working directory"},
   { "<Leader>gc", ":Git commit -m \"", desc = "Git commit" },
   { "<Leader>gpo", "<Cmd>Git push origin HEAD<CR>", desc = "Push to origin"},
+  {
+    "<Leader>gB",
+    function()
+      local builtin = require("telescope.builtin")
+      builtin.git_branches()
+    end,
+    desc = "Git branches",
+  },
   { "<Leader>ghb", "<Cmd>silent !gh browse %<CR>", desc = "GitHub browse" },
   { "<Leader>ghr", "<Cmd>silent !gh repo view --web<CR>", desc = "GitHub repo" },
   {
