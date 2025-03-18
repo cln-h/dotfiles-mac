@@ -360,6 +360,9 @@ require("lazy").setup({
   -- },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    config = function()
+      require("CopilotChat").setup({})
+    end,
     dependencies = {
       { "zbirenbaum/copilot.lua" },
       { "nvim-lua/plenary.nvim" }, -- for curl, log and async functions
@@ -367,7 +370,7 @@ require("lazy").setup({
   },
 
   -- Notes
-  return {
+  {
     "epwalsh/obsidian.nvim",
     version = "*",  -- recommended, use latest release instead of latest commit
     lazy = true,
