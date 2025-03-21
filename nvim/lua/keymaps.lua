@@ -13,6 +13,9 @@ nmap("n", "nzz")
 nmap("N", "Nzz")
 
 return {
+  -- rnu toggle
+  { "<Leader>rnu", "<Cmd>set rnu!<CR>", desc = "Toggle relative number" },
+
   -- Telescope
   {
     "<Leader>ff",
