@@ -143,6 +143,29 @@ return {
   { "-", "<Cmd>Oil<CR>", desc = "Browse project from here" },
   { "_", "<Cmd>Oil .<CR>", desc = "Browse project" },
 
+  -- Harpoon
+  {
+    "<Leader>.",
+    function()
+      require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+    end,
+    desc = "Browse pinned files in project",
+  },
+  {
+    "<Leader>;",
+    function()
+      require("harpoon"):list():add()
+    end,
+    desc = "Add current file to pinned list",
+  },
+  {
+    "<Leader>>",
+    function()
+      require("harpoon"):list():remove()
+    end,
+    desc = "Remove current file from pinned list",
+  },
+
   -- Buffer
   {
     "<Leader>bd",

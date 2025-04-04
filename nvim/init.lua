@@ -191,21 +191,17 @@ require("lazy").setup({
         })
     end,
   },
-  -- {
-  --   "https://github.com/ThePrimeagen/harpoon",
-  --   branch = "harpoon2",
-  --   event = "VeryLazy",
-  --   config = function()
-  --       local harpoon = require("harpoon")
-  --       harpoon:setup()
-
-  --       for i = 1, 5 do
-  --           vim.keymap.set("n", "<C-" .. i .. ">", function()
-  --               harpoon:list():select(i)
-  --           end)
-  --       end
-  --   end,
-  -- },
+  {
+    "https://github.com/ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    event = "VeryLazy",
+    config = function()
+      local harpoon = require("harpoon")
+      local extensions = require("harpoon.extensions")
+      harpoon:setup()
+      harpoon:extend(extensions.builtins.navigate_with_number())
+    end,
+  },
 
   -- Intellisense + Syntax
   {
@@ -226,22 +222,30 @@ require("lazy").setup({
     end,
   },
   {
+    "williamboman/mason.nvim",
+    config = function()
+        require("mason").setup({})
+    end,
+  },
+  {
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = { "lua_ls", "vimls", "biome", "ts_ls" },
+      })
+    end
+  },
+  {
     "https://github.com/neovim/nvim-lspconfig",
     event = "VeryLazy",
     config = function()
-        -- Requires language servers to be already installed
-        --[[
-          #!/bin/bash
-          npm i -g gopls pyright typescript typescript-language-server
-          brew install lua_ls
-        ]]
-        -- :help lspconfig-all
         local servers = {
             gopls = {},
             lua_ls = {},
             pyright = {},
             rust_analyzer = {},
             ts_ls = {},
+            biome = {},
         }
 
         local lspconfig = require("lspconfig")
@@ -387,31 +391,31 @@ require("lazy").setup({
   },
 
   -- Notes
-  {
-    "epwalsh/obsidian.nvim",
-    version = "*",  -- recommended, use latest release instead of latest commit
-    lazy = true,
-    ft = "markdown",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    -- Example configuration
-    -- opts = {
-    --   workspaces = {
-    --     {
-    --       name = "personal",
-    --       path = "~/vaults/personal",
-    --     },
-    --     {
-    --       name = "work",
-    --       path = "~/vaults/work",
-    --     },
-    --   },
-    -- },
-    opts = {
-      workspaces = require("obsidian-vaults") or {},
-    }
-  },
+  -- {
+  --   "epwalsh/obsidian.nvim",
+  --   version = "*",  -- recommended, use latest release instead of latest commit
+  --   lazy = true,
+  --   ft = "markdown",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   -- Example configuration
+  --   -- opts = {
+  --   --   workspaces = {
+  --   --     {
+  --   --       name = "personal",
+  --   --       path = "~/vaults/personal",
+  --   --     },
+  --   --     {
+  --   --       name = "work",
+  --   --       path = "~/vaults/work",
+  --   --     },
+  --   --   },
+  --   -- },
+  --   opts = {
+  --     workspaces = require("obsidian-vaults") or {},
+  --   }
+  -- },
 
 
   -- Misc
