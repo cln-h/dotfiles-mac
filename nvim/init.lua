@@ -38,23 +38,23 @@ vim.opt.statusline =
     " %c:%l/%L "              -- column at line per total lines
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -120,15 +120,15 @@ require("lazy").setup({
     "https://github.com/lukas-reineke/indent-blankline.nvim",
     event = "VeryLazy",
     config = function()
-        require("ibl").setup({
-            indent = {
-                char = "▏",
-                tab_char = "→",
-            },
-            scope = {
-                enabled = false,
-            },
-        })
+      require("ibl").setup({
+        indent = {
+          char = "▏",
+          tab_char = "→",
+        },
+        scope = {
+          enabled = false,
+        },
+      })
     end,
   },
   {
@@ -171,7 +171,7 @@ require("lazy").setup({
     "https://github.com/MagicDuck/grug-far.nvim",
     lazy = true,
     config = function()
-        require("grug-far").setup({})
+      require("grug-far").setup({})
     end,
   },
 
@@ -180,19 +180,19 @@ require("lazy").setup({
     "https://github.com/stevearc/oil.nvim",
     cmd = "Oil",
     config = function()
-        local oil = require("oil")
-        oil.setup({
-            columns = {},
-            view_options = {
-                show_hidden = true,
-                is_always_hidden = function(name, bufnr)
-                    return name == ".."
-                end,
-            },
-            win_options = {
-                concealcursor = "nvic",
-            },
-        })
+      local oil = require("oil")
+      oil.setup({
+        columns = {},
+        view_options = {
+          show_hidden = true,
+          is_always_hidden = function(name, bufnr)
+            return name == ".."
+          end,
+        },
+        win_options = {
+          concealcursor = "nvic",
+        },
+      })
     end,
   },
   {
@@ -213,22 +213,22 @@ require("lazy").setup({
     version = "v0.*",
     event = "VeryLazy",
     config = function()
-        require("blink.cmp").setup({
-            keymap = {
-                preset = "enter",
-            },
-            cmdline = {
-                keymap = {
-                    preset = "super-tab",
-                },
-            },
-        })
+      require("blink.cmp").setup({
+        keymap = {
+          preset = "enter",
+        },
+        cmdline = {
+          keymap = {
+            preset = "super-tab",
+          },
+        },
+      })
     end,
   },
   {
     "williamboman/mason.nvim",
     config = function()
-        require("mason").setup({})
+      require("mason").setup({})
     end,
   },
   {
@@ -243,23 +243,23 @@ require("lazy").setup({
     "https://github.com/neovim/nvim-lspconfig",
     event = "VeryLazy",
     config = function()
-        local servers = {
-            gopls = {},
-            lua_ls = {},
-            pyright = {},
-            rust_analyzer = {},
-            ts_ls = {},
-            biome = {},
-        }
+      local servers = {
+        gopls = {},
+        lua_ls = {},
+        pyright = {},
+        rust_analyzer = {},
+        ts_ls = {},
+        biome = {},
+      }
 
-        local lspconfig = require("lspconfig")
-        for server, config in pairs(servers) do
-            config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-            lspconfig[server].setup(config)
-        end
+      local lspconfig = require("lspconfig")
+      for server, config in pairs(servers) do
+        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
 
-        -- HACK manually start LSP server after lazy load
-        vim.cmd("filetype detect")
+      -- HACK manually start LSP server after lazy load
+      vim.cmd("filetype detect")
     end,
   },
   {
@@ -267,34 +267,34 @@ require("lazy").setup({
     build = ":TSUpdate",
     event = "VeryLazy",
     config = function()
-        require("nvim-treesitter.configs").setup({
-            ensure_installed = {
-                "cue",
-                "go",
-                "hcl",
-                "nix",
-                "puppet",
-                "python",
-                "rust",
-                "terraform",
-                "tsx",
-                "typescript",
-                "vimdoc",
-            },
-            highlight = {
-                enable = true,
-            },
-            indent = {
-                enable = true,
-            },
-        })
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = {
+          "cue",
+          "go",
+          "hcl",
+          "nix",
+          "puppet",
+          "python",
+          "rust",
+          "terraform",
+          "tsx",
+          "typescript",
+          "vimdoc",
+        },
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+      })
     end,
   },
   {
     "https://github.com/windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
-        require("nvim-autopairs").setup()
+      require("nvim-autopairs").setup()
     end,
   },
   {
@@ -311,7 +311,7 @@ require("lazy").setup({
     "https://github.com/echasnovski/mini.diff",
     event = "VeryLazy",
     config = function()
-        require("mini.diff").setup({})
+      require("mini.diff").setup({})
     end,
   },
   {
@@ -327,28 +327,28 @@ require("lazy").setup({
     "https://github.com/folke/flash.nvim",
     event = "VeryLazy",
     config = function()
-        require("flash").setup({
-            modes = {
-                search = {
-                    enabled = true,
-                },
-                char = {
-                    enabled = false,
-                },
-            },
-            highlight = {
-                groups = {
-                    label = "Question",
-                },
-            },
-        })
+      require("flash").setup({
+        modes = {
+          search = {
+            enabled = true,
+          },
+          char = {
+            enabled = false,
+          },
+        },
+        highlight = {
+          groups = {
+            label = "Question",
+          },
+        },
+      })
     end,
   },
   {
     "https://github.com/echasnovski/mini.surround",
     event = "VeryLazy",
     config = function()
-        require("mini.surround").setup({})
+      require("mini.surround").setup({})
     end,
   },
 
@@ -431,7 +431,7 @@ require("lazy").setup({
     "https://github.com/tpope/vim-sleuth",
     event = "VeryLazy",
     config = function()
-        vim.cmd("silent Sleuth")
+      vim.cmd("silent Sleuth")
     end,
   },
   {
@@ -442,7 +442,7 @@ require("lazy").setup({
     "https://github.com/numToStr/Comment.nvim",
     event = "VeryLazy",
     config = function()
-        require("Comment").setup()
+      require("Comment").setup()
     end,
   },
   {
@@ -458,7 +458,11 @@ require("lazy").setup({
   },
 })
 
+vim.diagnostic.config({
+  virtual_lines = true,
+  underline = true
+})
+
 vim.cmd("colorscheme rose-pine")
 
 require('autocmds')
-

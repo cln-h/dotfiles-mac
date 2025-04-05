@@ -43,7 +43,7 @@ autocmd("BufEnter", {
 
 -- Spell checking and text wrap for markdown/text files
 autocmd("Filetype", {
-  pattern = {"gitcommit", "markdown", "text"},
+  pattern = { "gitcommit", "markdown", "text" },
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
@@ -52,7 +52,7 @@ autocmd("Filetype", {
 
 -- Disable line numbers within copilot chat buffer
 autocmd("BufEnter", {
-  pattern = {"copilot-chat"},
+  pattern = { "copilot-chat" },
   callback = function()
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false
